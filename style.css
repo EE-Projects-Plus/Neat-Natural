@@ -1,0 +1,223 @@
+:root {
+      --green: #5b7f67;
+      --rose: #d84545;
+      --beige: #F2E7D5;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--green);
+      color: var(--beige);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100dvh;
+      background: var(--beige);
+      position: relative;
+    }
+
+    .logo {
+      width: 40vw;
+      min-width: 600px;
+      max-width: 800px;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-style: italic;
+      color: #fceaea;
+    }
+
+    section .about{
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services h2 {
+      color: var(--green);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .service-description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(91, 127, 103, 0.9);
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .service-card:hover .service-description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about h2, .contact h2 {
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--green);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #476254;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .service-text {
+        font-size: 1rem;
+      }
+      section {
+        padding: 1rem;
+      }
+    }
+
+    .scroll-down {
+      position: inherit;
+      margin-top: -5rem;
+      font-size: 3rem;
+      color: var(--green);
+      text-decoration: none;
+      animation: bounce 2s infinite;
+      transition: color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .scroll-down:hover {
+      color: var(--darkgreen); /* Add a darker green if you want */
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(8px);
+      }
+      60% {
+        transform: translateY(4px);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--green);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .title {
+      color: var(--text-light);
+      text-align: center;
+      position: relative;
+      display: block;
+      background-color: var(--text-dark);
+      width: 100%;
+    }
+    .title h1 {
+      font-size: 40px;
+    }
+    .title p {
+      font-size: 14px;
+    }
+
