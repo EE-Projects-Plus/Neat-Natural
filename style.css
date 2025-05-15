@@ -36,7 +36,7 @@
       max-width: 800px;
       height: auto;
       opacity: 0;
-      animation: fadeIn 2.5s ease-in forwards;
+      animation: fadeIn 1.5s ease-in forwards;
     }
 
     @keyframes fadeIn {
@@ -177,13 +177,19 @@
       font-size: 3rem;
       color: var(--green);
       text-decoration: none;
-      animation: bounce 2s infinite;
+      opacity: 0;
+      animation: fadeInBounce 2s ease-out forwards, bounce 2s infinite 2s; /* Delay bounce until fade-in starts */
       transition: color 0.3s ease;
       z-index: 1000;
     }
 
     .scroll-down:hover {
       color: var(--darkgreen); /* Add a darker green if you want */
+    }
+    @keyframes fadeInBounce {
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes bounce {
@@ -209,10 +215,10 @@
     .title {
       color: var(--text-light);
       text-align: center;
-      position: relative;
-      display: block;
       background-color: var(--text-dark);
       width: 100%;
+      margin: 0;
+      padding: 2rem;
     }
     .title h1 {
       font-size: 40px;
