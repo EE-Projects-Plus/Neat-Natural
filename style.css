@@ -28,7 +28,7 @@
       min-height: 100dvh;
       background: var(--beige);
       position: relative;
-      overflow: hidden;
+      overflow: hidden !important;
     }
 
     .logo {
